@@ -23,7 +23,7 @@
         var card = document.querySelector("#lp" + sid + "-hsform").closest(".fcard");
         if (card)
           card.innerHTML =
-            '<div style="text-align:center;padding:52px 24px"><div style="font-size:2.8rem;margin-bottom:16px">✓</div><h3 style="font-size:1.3rem;font-weight:800;color:#1a1a1a;margin-bottom:12px">Diagnóstico agendado!</h3><p style="color:#666;font-size:0.92rem">Nosso consultor entra em contato em até <strong>24h úteis</strong> pelo WhatsApp ou e-mail.</p></div>';
+            '<div style="text-align:center;padding:52px 24px"><div style="font-size:2.8rem;margin-bottom:16px">✓</div><h3 style="font-size:1.3rem;font-weight:800;color:#1a1a1a;margin-bottom:12px">Orçamento solicitado!</h3><p style="color:#666;font-size:0.92rem">Nossa equipe entra em contato em até <strong>24h úteis</strong> com uma proposta personalizada.</p></div>';
       },
     });
   }
