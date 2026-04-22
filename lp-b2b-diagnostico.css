@@ -965,45 +965,106 @@
   text-decoration: none;
 }
 
-/* ══ PAIN 2-COL ══ */
-.lp-demo .pain-layout {
+/* ══ PAIN — single column ══ */
+.lp-demo .pain h2 {
+  max-width: 760px;
+}
+
+.lp-demo .pain .intro {
+  max-width: 720px;
+}
+
+.lp-demo .pain .pain-callout {
+  max-width: 640px;
+}
+
+.lp-demo .pain .bullets {
+  max-width: 720px;
+}
+
+/* wide 3-col case box below bullets */
+.lp-demo .case--wide {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: start;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 40px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid #e9e4d9;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+  overflow: hidden;
 }
 
-.lp-demo .pain-right .case {
-  position: sticky;
-  top: 32px;
+.lp-demo .case-col {
+  padding: 32px 28px;
+  border-right: 1px solid #f0ece3;
+}
+
+.lp-demo .case-col:last-child {
+  border-right: none;
+}
+
+.lp-demo .case-col p {
+  font-size: 0.96rem;
+  color: #444;
   margin-bottom: 0;
+  line-height: 1.65;
 }
 
-/* ══ TESTIMONIALS CAROUSEL ══ */
+.lp-demo .case-col .case-roi {
+  display: inline-block;
+  margin-top: 16px;
+}
+
+/* ══ TESTIMONIALS — horizontal cards ══ */
 .lp-demo .testimonials {
-  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
 }
 
 .lp-demo .tcard {
-  padding: 40px 40px 32px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  padding: 28px 32px;
+  align-items: center;
+  gap: 0;
+}
+
+.lp-demo .tcard::before {
+  display: none;
+}
+
+.lp-demo .tcard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 28px;
+}
+
+.lp-demo .tcard-right {
+  border-left: 1px solid #eee;
+  padding-left: 28px;
 }
 
 .lp-demo .tcard-text {
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 0;
+  font-style: italic;
 }
 
-/* ══ VALUE 2-COL ══ */
+/* ══ VALUE — single column ══ */
 .lp-demo .value-list {
-  grid-template-columns: 1fr 1fr;
-  max-width: 1200px;
+  grid-template-columns: 1fr;
+  max-width: 860px;
 }
 
 .lp-demo .value-list .vitem:last-child {
-  grid-column: 1 / -1;
   border-color: rgba(200, 169, 110, 0.25);
 }
 
@@ -1247,12 +1308,40 @@
    RESPONSIVE
 ══════════════════════ */
 @media (max-width: 960px) {
-  .lp-demo .pain-layout {
+  .lp-demo .case--wide {
     grid-template-columns: 1fr;
-    gap: 36px;
+  }
+  .lp-demo .case-col {
+    border-right: none;
+    border-bottom: 1px solid #f0ece3;
+    padding: 24px 20px;
+  }
+  .lp-demo .case-col:last-child {
+    border-bottom: none;
   }
   .lp-demo .testimonials {
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+    gap: 14px;
+  }
+  .lp-demo .tcard {
+    flex-shrink: 0;
+    width: 82vw;
+    grid-template-columns: 1fr;
+    scroll-snap-align: start;
+  }
+  .lp-demo .tcard-left {
+    padding-right: 0;
+    padding-bottom: 16px;
+  }
+  .lp-demo .tcard-right {
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-left: 0;
+    padding-top: 16px;
   }
   .lp-demo .value-list {
     grid-template-columns: 1fr;
