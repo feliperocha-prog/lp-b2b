@@ -1,0 +1,1957 @@
+{% layout none %}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title | default: 'Minimal Club B2B — Uniformes Premium para Empresas' }}</title>
+  <style>
+/* ══ RESET ══ */
+.lp-demo *,
+.lp-demo *::before,
+.lp-demo *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ══ BASE ══ */
+.lp-demo {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1a1a1a;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  --bg: #ffffff;
+  --ink: #141414;
+  --muted: #5b5b5b;
+  --muted-2: #777;
+  --hairline: rgba(20, 20, 20, 0.1);
+  --card: rgba(255, 255, 255, 0.9);
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+
+  --gold: #c8a96e;
+  --gold-2: #b8994e;
+
+  --radius-lg: 22px;
+  --radius-md: 16px;
+
+  --container: 1200px;
+  --container-mid: 960px;
+  --container-narrow: 760px;
+
+  --pad-x: clamp(18px, 4vw, 56px);
+  --section-y: clamp(64px, 9vw, 110px);
+  --section-y-hero: clamp(72px, 10vw, 128px);
+
+  background: var(--bg);
+}
+
+.lp-demo .wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+.lp-demo .wrap--mid {
+  max-width: var(--container-mid);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+.lp-demo .wrap--narrow {
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/* ══ TYPOGRAPHY ══ */
+.lp-demo h1 {
+  font-size: clamp(2.05rem, 3.9vw, 3.55rem);
+  font-weight: 900;
+  line-height: 1.08;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.lp-demo h1 em {
+  color: #c8a96e;
+  font-style: normal;
+}
+
+.lp-demo h2 {
+  font-size: clamp(1.55rem, 2.6vw, 2.55rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.lp-demo h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.lp-demo .h2-sub {
+  font-size: 0.5em;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.lp-demo p {
+  font-size: clamp(1rem, 0.35vw + 0.95rem, 1.08rem);
+  color: var(--muted);
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.lp-demo .label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+/* ══ BUTTON ══ */
+.lp-demo .btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 20px 52px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  text-align: center;
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(200, 169, 110, 0.22);
+}
+
+.lp-demo .btn:hover {
+  background: var(--gold-2);
+  transform: translateY(-2px);
+}
+
+.lp-demo .btn:focus-visible {
+  outline: 3px solid rgba(200, 169, 110, 0.45);
+  outline-offset: 3px;
+}
+
+.lp-demo .btn--dark {
+  background: #0f0f0f;
+  color: #fff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.lp-demo .btn--dark:hover {
+  background: #333;
+}
+
+.lp-demo .btn-note {
+  display: block;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.62);
+  margin-top: 12px;
+  text-align: center;
+}
+
+.lp-demo .btn-note--light {
+  color: #c8c8c8;
+}
+
+/* ══════════════════════
+   1 — HERO
+══════════════════════ */
+.lp-demo .hero {
+  background:
+    radial-gradient(900px 520px at 50% 0%, rgba(200, 169, 110, 0.16), transparent 60%),
+    radial-gradient(700px 460px at 10% 20%, rgba(255, 255, 255, 0.06), transparent 55%),
+    #0f0f10;
+  padding: var(--section-y-hero) 0 clamp(52px, 7vw, 92px);
+  text-align: center;
+}
+
+.lp-demo .hero .eyebrow {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.lp-demo .hero h1 {
+  max-width: 940px;
+  margin: 0 auto 22px;
+}
+
+.lp-demo .hero .sub {
+  font-size: clamp(1.06rem, 0.6vw + 1rem, 1.2rem);
+  color: rgba(255, 255, 255, 0.68);
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+
+.lp-demo .hero .sub strong {
+  color: #fff;
+}
+
+.lp-demo .hero .cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.lp-demo .cta-wrap--center {
+  text-align: center;
+}
+
+.lp-demo .hero .media-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 52px;
+  flex-wrap: wrap;
+}
+
+.lp-demo .hero .media-bar-label {
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.42);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+
+.lp-demo .hero .media-tag {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ══════════════════════
+   2 — DOR / STORY
+══════════════════════ */
+.lp-demo .pain {
+  background: #f9f8f6;
+  padding: var(--section-y) 0;
+}
+
+.lp-demo .pain h2 {
+  color: #1a1a1a;
+}
+
+.lp-demo .pain .intro {
+  font-size: clamp(1.05rem, 0.5vw + 1rem, 1.18rem);
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.lp-demo .pain .pain-callout {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  border-left: 3px solid #c8a96e;
+  padding-left: 14px;
+  margin-bottom: 28px;
+  line-height: 1.55;
+}
+
+.lp-demo .pain .pain-sub-intro {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.lp-demo .case {
+  background: #fff;
+  border-left: 4px solid #c8a96e;
+  padding: 32px;
+  margin-bottom: 36px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+}
+
+.lp-demo .case p {
+  font-size: 0.96rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.lp-demo .case p:last-of-type {
+  margin-bottom: 0;
+}
+
+.lp-demo .case-roi {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(200, 169, 110, 0.15);
+  color: #7a612d;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lp-demo .bullets {
+  list-style: none;
+  border: 1px solid #e9e4d9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+}
+
+.lp-demo .bullets li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 14px;
+  padding: 16px 18px;
+  border-bottom: 1px solid #f1eee7;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.lp-demo .bullets li:last-child {
+  border-bottom: none;
+}
+
+.lp-demo .bullet-x {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(210, 74, 74, 0.08);
+  color: #d24a4a;
+  font-weight: 900;
+  font-size: 0.92rem;
+  line-height: 1;
+}
+
+/* ══════════════════════
+   3 — PROVA SOCIAL
+══════════════════════ */
+.lp-demo .proof {
+  background: #fff;
+  padding: var(--section-y) 0;
+}
+
+.lp-demo .proof .head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.lp-demo .proof .head h2 {
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+  color: #1a1a1a;
+}
+
+.lp-demo .stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 48px;
+}
+
+.lp-demo .stat {
+  background: #111;
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  border: 1px solid #222;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.22);
+}
+
+.lp-demo .stat-num {
+  display: block;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.lp-demo .stat-lbl {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #8d8d8d;
+  font-weight: 700;
+}
+
+.lp-demo .logos {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.lp-demo .logo-item {
+  position: relative;
+}
+
+.lp-demo .logo-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.lp-demo .logo-item:hover::after {
+  opacity: 1;
+}
+
+.lp-demo .logo-item {
+  border: 1px solid #eee;
+  border-radius: 999px;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #444;
+  background: #fafafa;
+}
+
+.lp-demo .testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lp-demo .tcard {
+  border: 1px solid #eee;
+  background: #fff;
+  border-radius: 18px;
+  padding: 26px 22px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.lp-demo .tcard:hover {
+  transform: translateY(-2px);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+}
+
+.lp-demo .tcard::before {
+  content: "\201C";
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: rgba(200, 169, 110, 0.35);
+  font-weight: 900;
+}
+
+.lp-demo .tcard-headline {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.lp-demo .tcard-text {
+  margin-top: 12px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.lp-demo .tcard-result {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(26, 26, 26, 0.06);
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lp-demo .tcard-author {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.lp-demo .tcard-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eee, #ddd);
+  border: 1px solid #eee;
+}
+
+.lp-demo .tcard-name {
+  display: block;
+  font-weight: 900;
+  color: #1a1a1a;
+  font-size: 0.92rem;
+}
+
+.lp-demo .tcard-role {
+  display: block;
+  color: #777;
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+
+/* ══════════════════════
+   4 — STACK DE VALOR
+══════════════════════ */
+.lp-demo .value {
+  background: #111;
+  color: #fff;
+  padding: var(--section-y) 0;
+}
+
+.lp-demo .value .head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.lp-demo .value .head h2 {
+  max-width: 20ch;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+
+.lp-demo .value .head p {
+  color: #bdbdbd;
+}
+
+.lp-demo .value-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  max-width: 920px;
+  margin: 0 auto 36px;
+}
+
+.lp-demo .vitem {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: #151515;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 18px 18px;
+}
+
+.lp-demo .vitem:hover {
+  border-color: rgba(200, 169, 110, 0.35);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+}
+
+.lp-demo .vnum {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(200, 169, 110, 0.18);
+  color: #c8a96e;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+
+.lp-demo .vcontent p {
+  color: #b9b9b9;
+  margin-bottom: 0;
+}
+
+.lp-demo .vcontent h3 {
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.lp-demo .vprice {
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: #c8a96e;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-top: 8px;
+  white-space: nowrap;
+}
+
+.lp-demo .vtotal {
+  max-width: 920px;
+  margin: 0 auto 30px;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.lp-demo .vtotal-label {
+  color: #bdbdbd;
+  font-weight: 800;
+}
+
+.lp-demo .vtotal-was {
+  color: #888;
+  text-decoration: line-through;
+  font-weight: 900;
+  font-size: 0.95rem;
+  text-align: right;
+}
+
+.lp-demo .vtotal-free {
+  color: #c8a96e;
+  font-weight: 900;
+  font-size: 1.4rem;
+  text-align: right;
+}
+
+/* ══════════════════════
+   5 — GARANTIA
+══════════════════════ */
+.lp-demo .guarantee {
+  background: #f9f8f6;
+  padding: var(--section-y) 0;
+}
+
+.lp-demo .gbox {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 22px;
+  padding: 56px 46px;
+  max-width: 920px;
+  margin: 0 auto 22px;
+  text-align: center;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.04);
+}
+
+.lp-demo .gbadge {
+  display: inline-block;
+  background: rgba(200, 169, 110, 0.15);
+  border: 1px solid rgba(200, 169, 110, 0.25);
+  color: #7a612d;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.lp-demo .gintro {
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.lp-demo .gamount {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1;
+  margin: 6px 0;
+}
+
+.lp-demo .gtitle {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+}
+
+.lp-demo .gdesc {
+  color: #666;
+  font-size: 0.96rem;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+.lp-demo .gbox-right .btn {
+  margin-top: 8px;
+}
+
+.lp-demo .gfine {
+  text-align: center;
+  color: #777;
+  font-size: 0.88rem;
+  margin-bottom: 0;
+}
+
+/* ══════════════════════
+   6 — FAQ
+══════════════════════ */
+.lp-demo .faq {
+  background: #fff;
+  padding: var(--section-y) 0;
+}
+
+.lp-demo .faq .head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.lp-demo .faq-list {
+  max-width: 920px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.lp-demo .faq-item {
+  border: 1px solid #eee;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.lp-demo .faq-item:hover {
+  border-color: rgba(20, 20, 20, 0.14);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.06);
+}
+
+.lp-demo .faq-q {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  padding: 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  font-weight: 900;
+  color: #1a1a1a;
+  font-size: 0.98rem;
+}
+
+.lp-demo .faq-q:focus-visible {
+  outline: 3px solid rgba(200, 169, 110, 0.35);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+.lp-demo .faq-icon {
+  font-size: 1.1rem;
+  color: #c8a96e;
+  font-weight: 900;
+}
+
+.lp-demo .faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  border-top: 1px solid #f3f3f3;
+}
+
+.lp-demo .faq-a-inner {
+  padding: 16px 18px 18px;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.lp-demo .faq-item.open .faq-a {
+  max-height: 520px;
+}
+
+.lp-demo .faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+/* ══════════════════════
+   7 — FORM
+══════════════════════ */
+.lp-demo .form-sec {
+  background: #111;
+  padding: var(--section-y) 0;
+}
+
+.lp-demo .form-sec .head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.lp-demo .form-sec .head h2 {
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+
+.lp-demo .form-sec .head p {
+  color: #bdbdbd;
+}
+
+.lp-demo .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.lp-demo .finfo {
+  border: 1px solid #222;
+  border-radius: 18px;
+  padding: 28px 26px;
+  background: #151515;
+}
+
+.lp-demo .finfo h3 {
+  color: #fff;
+}
+
+.lp-demo .finfo ul {
+  margin-top: 12px;
+  padding-left: 18px;
+  color: #bdbdbd;
+}
+
+.lp-demo .finfo li {
+  margin-bottom: 10px;
+}
+
+.lp-demo .gmini {
+  margin-top: 18px;
+  border-radius: 16px;
+  padding: 14px 14px;
+  background: rgba(200, 169, 110, 0.1);
+  border: 1px solid rgba(200, 169, 110, 0.18);
+  color: #d4c09a;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.lp-demo .fcard {
+  background: #fff;
+  border-radius: 18px;
+  padding: 34px 28px;
+  border: 1px solid #eee;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.08);
+}
+
+.lp-demo .fnote {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  color: #777;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.lp-demo .ftrust {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lp-demo .ftrust-item {
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  border: 1px solid #eee;
+  background: #fafafa;
+  padding: 7px 10px;
+  border-radius: 999px;
+}
+
+/* ══════════════════════
+   8 — URGÊNCIA / CTA / FOOTER
+══════════════════════ */
+.lp-demo .urgency {
+  background: #f9f8f6;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.lp-demo .urgency p {
+  margin-bottom: 0;
+  color: #444;
+}
+
+.lp-demo .ctaband {
+  background: #f9f8f6;
+  padding: var(--section-y) 0;
+}
+
+.lp-demo .ctaband .wrap--narrow {
+  text-align: center;
+}
+
+.lp-demo .lp-footer {
+  background: #111;
+  padding: 44px 0;
+  color: #999;
+}
+
+.lp-demo .footer-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.lp-demo .footer-trust-item {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #777;
+  border: 1px solid #222;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 7px 10px;
+  border-radius: 999px;
+}
+
+.lp-demo .footer-legal {
+  text-align: center;
+  color: #777;
+  font-size: 0.86rem;
+  margin-bottom: 0;
+}
+
+.lp-demo .footer-legal a {
+  color: #c8a96e;
+  text-decoration: none;
+}
+
+/* ══ PAIN — single column ══ */
+.lp-demo .pain h2 {
+  max-width: 760px;
+}
+
+.lp-demo .pain .intro {
+  max-width: 720px;
+}
+
+.lp-demo .pain .pain-callout {
+  max-width: 640px;
+}
+
+.lp-demo .pain .bullets {
+  max-width: 720px;
+}
+
+/* wide 3-col case box below bullets */
+.lp-demo .case--wide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 40px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid #e9e4d9;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+
+.lp-demo .case-col {
+  padding: 32px 28px;
+  border-right: 1px solid #f0ece3;
+}
+
+.lp-demo .case-col:last-child {
+  border-right: none;
+}
+
+.lp-demo .case-col p {
+  font-size: 0.96rem;
+  color: #444;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+.lp-demo .case-col .case-roi {
+  display: inline-block;
+  margin-top: 16px;
+}
+
+/* ══ TESTIMONIALS — horizontal cards ══ */
+.lp-demo .testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.lp-demo .tcard {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  padding: 28px 32px;
+  align-items: center;
+  gap: 0;
+}
+
+.lp-demo .tcard::before {
+  display: none;
+}
+
+.lp-demo .tcard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 28px;
+}
+
+.lp-demo .tcard-right {
+  border-left: 1px solid #eee;
+  padding-left: 28px;
+}
+
+.lp-demo .tcard-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+/* ══ VALUE — single column ══ */
+.lp-demo .value-list {
+  grid-template-columns: 1fr;
+  max-width: 860px;
+}
+
+.lp-demo .value-list .vitem:last-child {
+  border-color: rgba(200, 169, 110, 0.25);
+}
+
+.lp-demo .vtotal {
+  max-width: 1200px;
+  padding: 24px 28px;
+}
+
+/* ══ GUARANTEE 2-COL ══ */
+.lp-demo .gbox {
+  max-width: 1100px;
+  padding: 56px 64px;
+}
+
+.lp-demo .gbox-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  text-align: left;
+}
+
+.lp-demo .gbox-left .gintro,
+.lp-demo .gbox-left .gamount,
+.lp-demo .gbox-left .gtitle {
+  text-align: left;
+}
+
+.lp-demo .gbox-right {
+  border-left: 1px solid #eee;
+  padding-left: 64px;
+}
+
+.lp-demo .gbox-right .gdesc {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ══ FAQ 2-COL ══ */
+.lp-demo .faq-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.lp-demo .faq-heading {
+  position: sticky;
+  top: 40px;
+}
+
+.lp-demo .faq-heading .label {
+  margin-bottom: 12px;
+}
+
+.lp-demo .faq-heading h2 {
+  font-size: clamp(1.55rem, 2.2vw, 2.2rem);
+  margin-bottom: 16px;
+}
+
+.lp-demo .faq-heading p {
+  font-size: 0.96rem;
+  color: #666;
+  margin-bottom: 28px;
+}
+
+.lp-demo .faq-heading .btn {
+  font-size: 0.85rem;
+  padding: 16px 28px;
+}
+
+.lp-demo .faq-items {
+  margin-top: 0;
+}
+
+/* ══ FORM PROPORTIONS ══ */
+.lp-demo .form-grid {
+  grid-template-columns: 5fr 7fr;
+  gap: 40px;
+}
+
+.lp-demo .finfo {
+  padding: 36px 32px;
+}
+
+.lp-demo .finfo h3 {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+
+.lp-demo .finfo ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.lp-demo .finfo li {
+  padding: 10px 0;
+  border-bottom: 1px solid #1e1e1e;
+  color: #c8c8c8;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.lp-demo .finfo li::before {
+  content: "✓";
+  color: #c8a96e;
+  font-weight: 900;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.lp-demo .finfo li:last-child {
+  border-bottom: none;
+}
+
+.lp-demo .fcard {
+  padding: 44px 40px;
+}
+
+/* ══ HUBSPOT FORM OVERRIDES ══ */
+.lp-demo .fcard .hs-form fieldset {
+  max-width: 100% !important;
+  border: none !important;
+  padding: 0 !important;
+}
+.lp-demo .fcard .hs-form .hs-form-field > label {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+.lp-demo .fcard .hs-form input[type="text"],
+.lp-demo .fcard .hs-form input[type="email"],
+.lp-demo .fcard .hs-form input[type="tel"],
+.lp-demo .fcard .hs-form select,
+.lp-demo .fcard .hs-form textarea {
+  width: 100% !important;
+  border: 1.5px solid #e0e0e0 !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-size: 0.95rem !important;
+  color: #1a1a1a !important;
+  background: #fafafa !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  font-family: inherit !important;
+}
+.lp-demo .fcard .hs-form input:focus,
+.lp-demo .fcard .hs-form select:focus,
+.lp-demo .fcard .hs-form textarea:focus {
+  border-color: #c8a96e !important;
+  background: #fff !important;
+}
+.lp-demo .fcard .hs-form .hs-form-field {
+  margin-bottom: 18px !important;
+}
+.lp-demo .fcard .hs-form .hs-fieldtype-checkbox .hs-form-checkbox label,
+.lp-demo .fcard .hs-form .hs-fieldtype-radio .hs-form-radio label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 0.92rem !important;
+  color: #333 !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+}
+.lp-demo .fcard .hs-form .hs-fieldtype-checkbox .hs-form-checkbox input[type="checkbox"],
+.lp-demo .fcard .hs-form .hs-fieldtype-radio .hs-form-radio input[type="radio"] {
+  width: 16px !important;
+  height: 16px !important;
+  accent-color: #c8a96e !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+}
+.lp-demo .fcard .hs-form .hs-button,
+.lp-demo .fcard input[type="submit"],
+.lp-demo .fcard button[type="submit"],
+.lp-demo .fcard .hs-submit input,
+.lp-demo .fcard .hs-submit button {
+  background: #c8a96e !important;
+  color: #1a1a1a !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 18px 40px !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+  box-shadow: 0 10px 26px rgba(200, 169, 110, 0.22) !important;
+  transition: background 0.2s, transform 0.15s !important;
+  font-family: inherit !important;
+}
+.lp-demo .fcard .hs-form .hs-button:hover,
+.lp-demo .fcard input[type="submit"]:hover,
+.lp-demo .fcard button[type="submit"]:hover {
+  background: #b8994e !important;
+  transform: translateY(-2px) !important;
+}
+.lp-demo .fcard .hs-form .hs-error-msgs {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 4px 0 0 !important;
+}
+.lp-demo .fcard .hs-form .hs-error-msgs label {
+  color: #d24a4a !important;
+  font-size: 0.8rem !important;
+}
+.lp-demo .fcard .hs-form a {
+  color: #c8a96e !important;
+}
+.lp-demo .fcard .hs-form .legal-consent-container {
+  font-size: 0.82rem !important;
+  color: #888 !important;
+}
+
+/* ══ SCROLL ANIMATION ══ */
+.lp-demo .scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.lp-demo .scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════
+   RESPONSIVE
+══════════════════════ */
+@media (max-width: 960px) {
+  .lp-demo .case--wide {
+    grid-template-columns: 1fr;
+  }
+  .lp-demo .case-col {
+    border-right: none;
+    border-bottom: 1px solid #f0ece3;
+    padding: 24px 20px;
+  }
+  .lp-demo .case-col:last-child {
+    border-bottom: none;
+  }
+  .lp-demo .testimonials {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 16px;
+    gap: 14px;
+  }
+  .lp-demo .tcard {
+    flex-shrink: 0;
+    width: 82vw;
+    grid-template-columns: 1fr;
+    scroll-snap-align: start;
+  }
+  .lp-demo .tcard-left {
+    padding-right: 0;
+    padding-bottom: 16px;
+  }
+  .lp-demo .tcard-right {
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding-left: 0;
+    padding-top: 16px;
+  }
+  .lp-demo .value-list {
+    grid-template-columns: 1fr;
+  }
+  .lp-demo .gbox-split {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .lp-demo .gbox-left .gintro,
+  .lp-demo .gbox-left .gamount,
+  .lp-demo .gbox-left .gtitle {
+    text-align: center;
+  }
+  .lp-demo .gbox-right {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #eee;
+    padding-top: 32px;
+  }
+  .lp-demo .gbox-right .gdesc {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .lp-demo .faq-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .lp-demo .faq-heading {
+    position: static;
+    text-align: center;
+  }
+  .lp-demo .faq-heading .btn {
+    display: none;
+  }
+  .lp-demo .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 560px;
+    padding: 0 20px;
+  }
+  .lp-demo .finfo {
+    display: none;
+  }
+  .lp-demo .logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .lp-demo .wrap,
+  .lp-demo .wrap--mid,
+  .lp-demo .wrap--narrow {
+    padding: 0 var(--pad-x);
+  }
+
+  .lp-demo .hero {
+    padding: clamp(64px, 10vw, 92px) 0 clamp(44px, 8vw, 70px);
+  }
+  .lp-demo .pain,
+  .lp-demo .proof,
+  .lp-demo .value,
+  .lp-demo .guarantee,
+  .lp-demo .faq,
+  .lp-demo .form-sec,
+  .lp-demo .ctaband {
+    padding: clamp(56px, 8vw, 84px) 0;
+  }
+
+  .lp-demo .testimonials {
+    grid-template-columns: 1fr;
+  }
+  .lp-demo .btn {
+    padding: 18px 32px;
+    width: 100%;
+    display: block;
+  }
+  .lp-demo .fcard {
+    padding: 28px 20px;
+  }
+  .lp-demo .gbox {
+    padding: 40px 24px;
+  }
+  .lp-demo .vitem {
+    grid-template-columns: 48px 1fr;
+  }
+  .lp-demo .vprice {
+    grid-column: 1 / -1;
+    padding-top: 0;
+    opacity: 0.9;
+  }
+}
+  </style>
+</head>
+<body>
+    <div class="lp-demo">
+      <section class="hero">
+        <div class="wrap">
+          <span class="eyebrow">Minimal Club B2B &mdash; Uniformes Premium para Empresas</span>
+          <h1>
+            Seu time está custando contratos<br />— e você nem percebe.<br />
+            <em>Uniforme errado comunica<br />desorganização antes de qualquer palavra.</em>
+          </h1>
+          <p class="sub">
+            A mesma qualidade aprovada por <strong>+150 mil clientes</strong> individuais —
+            agora com a cara da sua empresa. A partir de 20 peças.
+          </p>
+          <div class="cta-wrap">
+            <a href="#formulario" class="btn">Pedir Orçamento Agora</a>
+            <span class="btn-note">Preços são referência &bull; Variam por estamparia e CEP de entrega</span>
+          </div>
+          <div class="media-bar">
+            <span class="media-bar-label">Citados em</span>
+            <span class="media-tag">Forbes</span>
+            <span class="media-tag">Exame</span>
+            <span class="media-tag">Terra</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="pain scroll-animate">
+        <div class="wrap">
+          <span class="label">O problema que ninguém fala</span>
+          <h2>Time sem identidade visual perde credibilidade antes de abrir a boca</h2>
+          <p class="intro">
+            Não é questão de vaidade. É sobre a primeira impressão que seu time causa.
+            Quando cada colaborador chega de um jeito diferente, a mensagem que passa é
+            desorganização — independente da qualidade do serviço que vocês entregam.
+          </p>
+          <p class="pain-callout">
+            E percepção não é justa — é rápida. Em segundos, o cliente decide se sua
+            empresa parece cara… ou barata.
+          </p>
+          <p class="pain-sub-intro">Se você reconhece algum desses sinais, já é hora de resolver:</p>
+          <ul class="bullets">
+            <li>
+              <span class="bullet-x">✗</span>Time sem uniforme padrão — cada um veste o que
+              quer em reuniões com cliente
+            </li>
+            <li>
+              <span class="bullet-x">✗</span>Uniformes comprados no atacado sem personalização —
+              logo mal aplicada ou simplesmente sem logo
+            </li>
+            <li>
+              <span class="bullet-x">✗</span>Equipe sem identidade visual não "veste a camisa"
+              de verdade
+            </li>
+            <li>
+              <span class="bullet-x">✗</span>Clientes maiores hesitam em contratos de alto
+              valor com equipes que parecem desalinhadas
+            </li>
+            <li>
+              <span class="bullet-x">✗</span>Você sabe que precisa resolver mas acha complexo
+              ou caro sem ter orçado
+            </li>
+          </ul>
+          <div class="case case--wide">
+            <div class="case-col">
+              <p><strong>O uniforme faz parte da entrega.</strong> Quando seu time chega
+              padronizado, com a logo aplicada com qualidade, a percepção do cliente muda
+              antes de qualquer palavra ser dita.</p>
+            </div>
+            <div class="case-col">
+              <p>É a mesma diferença entre entregar uma proposta impressa num papel amassado
+              ou num papel bem formatado. O conteúdo pode ser igual. A percepção, não.</p>
+            </div>
+            <div class="case-col">
+              <p>Uniforme não é custo de imagem. É parte do que você está vendendo.</p>
+              <span class="case-roi">Identidade visual começa no time</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof scroll-animate">
+        <div class="wrap">
+          <div class="head">
+            <span class="label">Por que a Minimal Club</span>
+            <h2>150 mil clientes aprovaram o tecido.<br />Agora é a vez do seu time.</h2>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-num">150k+</span><span class="stat-lbl">Clientes aprovaram a qualidade</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">20+</span><span class="stat-lbl">Peças mínimas por pedido</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">P ao 4G</span><span class="stat-lbl">Modelagem unissex inclusiva</span>
+            </div>
+          </div>
+          <div class="testimonials">
+            <div class="tcard">
+              <div class="tcard-left">
+                <strong class="tcard-headline">Antes parecia freelancer. Hoje tem cara de empresa.</strong>
+                <span class="tcard-result">Identidade visual consolidada</span>
+                <div class="tcard-author">
+                  <div class="tcard-avatar"></div>
+                  <div>
+                    <span class="tcard-name">Cliente Minimal Club B2B</span>
+                    <span class="tcard-role">Consultoria &bull; São Paulo, SP</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tcard-right">
+                <p class="tcard-text">"Antes do Minimal Club, nossa equipe ia pra reunião cada um com uma roupa. Parecia freelancers. Hoje o uniforme comunica quem a gente é antes de abrirmos a boca."</p>
+              </div>
+            </div>
+            <div class="tcard">
+              <div class="tcard-left">
+                <strong class="tcard-headline">40 peças, 3 semanas, zero complicação.</strong>
+                <span class="tcard-result">40 peças em 3 semanas</span>
+                <div class="tcard-author">
+                  <div class="tcard-avatar"></div>
+                  <div>
+                    <span class="tcard-name">Cliente Minimal Club B2B</span>
+                    <span class="tcard-role">E-commerce &bull; Rio de Janeiro, RJ</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tcard-right">
+                <p class="tcard-text">"Pedimos 40 polos personalizadas. Em 3 semanas, uniformes em mãos, equipe apresentável e com identidade. O processo foi todo guiado, sem complicação. Vale cada centavo."</p>
+              </div>
+            </div>
+            <div class="tcard">
+              <div class="tcard-left">
+                <strong class="tcard-headline">A concorrente parecia mais organizada. Até a gente mudar.</strong>
+                <span class="tcard-result">Time com cara de empresa</span>
+                <div class="tcard-author">
+                  <div class="tcard-avatar"></div>
+                  <div>
+                    <span class="tcard-name">Cliente Minimal Club B2B</span>
+                    <span class="tcard-role">Serviços B2B &bull; Belo Horizonte, MG</span>
+                  </div>
+                </div>
+              </div>
+              <div class="tcard-right">
+                <p class="tcard-text">"Nosso maior cliente comentou na renovação que a equipe da concorrente parecia mais organizada. Isso foi antes do Minimal Club. Nunca mais ouvi esse comentário."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="value scroll-animate">
+        <div class="wrap">
+          <div class="head">
+            <span class="label">O que você recebe</span>
+            <h2>
+              Uniforme premium com a cara<br />da sua empresa
+              <small class="h2-sub">Personalização completa &mdash; Processo simples &mdash; Entrega nacional</small>
+            </h2>
+            <p>Isso não é um fornecedor genérico de uniforme. É personalização premium com processo guiado — do mockup à entrega.</p>
+          </div>
+          <ul class="value-list">
+            <li class="vitem">
+              <div class="vnum">1</div>
+              <div class="vcontent">
+                <h3>Tecido premium — algodão egípcio e poliamida</h3>
+                <p>A mesma matéria-prima aprovada por mais de 150 mil clientes individuais. Durabilidade comprovada, toque diferenciado.</p>
+              </div>
+            </li>
+            <li class="vitem">
+              <div class="vnum">2</div>
+              <div class="vcontent">
+                <h3>Sua logo do jeito que você quer</h3>
+                <p>Silk screen, DTF (digital) ou bordado. Você escolhe a técnica — nossa equipe garante a aplicação perfeita em cada peça.</p>
+              </div>
+            </li>
+            <li class="vitem">
+              <div class="vnum">3</div>
+              <div class="vcontent">
+                <h3>Modelagem unissex do P ao 4G</h3>
+                <p>Desenvolvido para vestir bem em todos os corpos. Seus colaboradores vão se sentir confortáveis e com a cara da empresa.</p>
+              </div>
+            </li>
+            <li class="vitem">
+              <div class="vnum">4</div>
+              <div class="vcontent">
+                <h3>Pedido a partir de 20 peças</h3>
+                <p>Sem pedido mínimo absurdo. Ideal para times enxutos ou para começar com uma área específica antes de expandir.</p>
+              </div>
+            </li>
+            <li class="vitem">
+              <div class="vnum">5</div>
+              <div class="vcontent">
+                <h3>Entrega nacional em 15 a 25 dias úteis</h3>
+                <p>Após aprovação do mockup digital, produção e envio para qualquer estado. Prazo real, sem surpresa.</p>
+              </div>
+            </li>
+          </ul>
+          <div class="cta-wrap cta-wrap--center">
+            <a href="#formulario" class="btn">Pedir Orçamento Agora</a>
+            <span class="btn-note btn-note--light">Valores são referência &bull; Preço final varia por estamparia e CEP</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="guarantee scroll-animate">
+        <div class="wrap">
+          <div class="gbox">
+            <div class="gbox-split">
+              <div class="gbox-left">
+                <span class="gbadge">Como funciona</span>
+                <p class="gintro">Do pedido à entrega</p>
+                <div class="gamount">3</div>
+                <div class="gtitle">passos simples.</div>
+              </div>
+              <div class="gbox-right">
+                <p class="gdesc">
+                  <strong>1. Você envia o arquivo da sua logo.</strong> Nossa equipe faz o mockup
+                  digital em cada peça escolhida — camiseta, polo, camisa social.<br /><br />
+                  <strong>2. Você aprova antes de qualquer produção.</strong> Nenhuma peça é
+                  produzida sem a sua confirmação do visual.<br /><br />
+                  <strong>3. Produção e entrega em 15–25 dias úteis.</strong> Entrega nacional,
+                  rastreada, para o endereço da sua empresa.
+                </p>
+                <a href="#formulario" class="btn btn--dark">Solicitar Orçamento</a>
+              </div>
+            </div>
+          </div>
+          <p class="gfine">Pedido mínimo de 20 unidades. Preços variam conforme técnica de estamparia e CEP de entrega.</p>
+        </div>
+      </section>
+
+      <section class="faq scroll-animate">
+        <div class="wrap">
+          <div class="faq-layout">
+            <div class="faq-heading">
+              <span class="label">Perguntas frequentes</span>
+              <h2>Já ouvi isso antes.<br>Pode ser.</h2>
+              <p>Respostas diretas para as principais dúvidas de quem está montando o uniforme da equipe.</p>
+              <a href="#formulario" class="btn btn--dark">Pedir Orçamento</a>
+            </div>
+            <div class="faq-items faq-list">
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                  "Já tenho fornecedor de uniforme." <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    Ótimo — significa que você já entende o valor. A pergunta é:
+                    <strong>seu fornecedor entrega algodão egípcio e poliamida com silk, DTF ou bordado?</strong>
+                    Peça um orçamento de comparação. Sem compromisso.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                  "Qual o preço?" <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    Os preços variam conforme a <strong>técnica de personalização escolhida</strong>
+                    (silk screen, DTF ou bordado) e o <strong>CEP de entrega</strong>. Preencha o
+                    formulário e nossa equipe envia uma proposta detalhada em até 24h úteis.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                  "Qual o prazo de entrega?" <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    <strong>15 a 25 dias úteis</strong> para produção e personalização após
+                    aprovação do mockup. Entrega nacional rastreada. Para pedidos urgentes,
+                    mencione na solicitação — há alternativas dependendo da peça e quantidade.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                  "20 peças é muito para minha empresa." <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    20 peças é o mínimo para viabilizar personalização premium.
+                    <strong>Se você tem 10 pessoas, pode pedir 2 peças por colaborador</strong>
+                    (troca semanal) — prática padrão de mercado. Nossa equipe ajuda a montar o
+                    pedido certo para o seu time.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                  "A personalização é complicada?" <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    3 passos: <strong>(1)</strong> você manda o arquivo da logo,
+                    <strong>(2)</strong> nossa equipe faz o mockup digital em cada peça,
+                    <strong>(3)</strong> você aprova antes de qualquer produção. Técnicas
+                    disponíveis: silk screen, DTF (digital) e bordado.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                  "Quais peças estão disponíveis?" <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    Camiseta, polo e camisa social. Modelagem unissex do
+                    <strong>P ao 4G</strong> para vestir bem qualquer time. Informe no
+                    formulário quais peças e quantidade você precisa.
+                  </div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">
+                  "Isso realmente faz diferença ou é só estética?" <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-a">
+                  <div class="faq-a-inner">
+                    Não vendemos estética. Vendemos percepção de valor.
+                    <strong>Em B2B, contratos não são decididos só pela proposta — mas pela confiança.</strong>
+                    E aparência comunica confiança antes de qualquer argumento. O uniforme não é
+                    o único fator, mas é o primeiro sinal que o cliente lê.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-sec scroll-animate" id="formulario">
+        <div class="wrap">
+          <div class="head">
+            <span class="label">Solicite agora</span>
+            <h2>
+              Orçamento de Uniformes para Empresas<br /><small class="h2-sub"
+                >Sem compromisso &bull; Resposta em até 24h úteis</small>
+            </h2>
+            <p>Leva menos de 1 minuto para solicitar. Nossa equipe envia uma proposta personalizada com valores e opções em até 24h úteis.</p>
+          </div>
+          <div class="form-grid">
+            <div class="finfo">
+              <h3>O que você recebe na proposta</h3>
+              <ul>
+                <li>Preço por peça conforme técnica de estamparia</li>
+                <li>Mockup digital com sua logo nas peças escolhidas</li>
+                <li>Opções de modelagem e tecido disponíveis</li>
+                <li>Prazo de produção e entrega para o seu CEP</li>
+                <li>Proposta para o seu volume — a partir de 20 peças</li>
+              </ul>
+              <div class="gmini">
+                <strong>Sem letra miúda.</strong> Preços reais, proposta personalizada, sem pressão para fechar.
+              </div>
+            </div>
+            <div class="fcard">
+              <div id="lp-demo-hsform">
+                <div style="text-align: center; padding: 48px 0; color: #bbb; font-size: 0.9rem">
+                  Carregando formulário...
+                </div>
+              </div>
+              <span class="fnote">Sem compromisso &bull; Preços são referência &bull; Variam por estamparia e CEP</span>
+              <div class="ftrust">
+                <span class="ftrust-item">Dados protegidos (LGPD)</span>
+                <span class="ftrust-item">Sem spam</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ctaband">
+        <div class="wrap--narrow">
+          <span class="label">Uniforme que representa quem vocês são</span>
+          <h2>A primeira impressão do seu time começa antes da reunião.</h2>
+          <p>Tecido premium. Logo perfeita. Modelagem unissex do P ao 4G. A partir de 20 peças.</p>
+          <a href="#formulario" class="btn btn--dark">Pedir Orçamento Agora</a>
+          <span class="btn-note">Preços variam por estamparia e CEP de entrega</span>
+        </div>
+      </section>
+
+      <footer class="lp-footer">
+        <div class="wrap">
+          <div class="footer-trust">
+            <span class="footer-trust-item">CNPJ: [a preencher]</span>
+            <span class="footer-trust-item">Belo Horizonte, MG</span>
+            <span class="footer-trust-item">Reclame Aqui</span>
+            <span class="footer-trust-item">ABVTex Certificado</span>
+            <span class="footer-trust-item">+150k clientes B2C</span>
+          </div>
+          <p class="footer-legal">
+            &copy; 2025 Minimal Club. Todos os direitos reservados.<br />
+            <a href="#">Política de Privacidade</a> &bull; <a href="#">Termos de Uso</a>
+          </p>
+        </div>
+      </footer>
+    </div>
+
+  </body>
+  <script>
+(function () {
+  var sid = "-demo";
+
+  function loadForm() {
+    if (typeof hbspt === "undefined") {
+      setTimeout(loadForm, 300);
+      return;
+    }
+    hbspt.forms.create({
+      region: "na1",
+      portalId: "21708321",
+      formId: "53602944-9ccd-46d1-a843-b1845d6a8d76",
+      target: "#lp" + sid + "-hsform",
+      onFormReady: function (form) {
+        ["h1", "h2", "h3", "img", ".hs-richtext", ".hs-form-logo"].forEach(function (sel) {
+          form.querySelectorAll(sel).forEach(function (el) {
+            el.style.display = "none";
+          });
+        });
+      },
+      onFormSubmitted: function () {
+        if (typeof fbq === "function") fbq("track", "Lead", { value: 2500, currency: "BRL" });
+        var card = document.querySelector("#lp" + sid + "-hsform").closest(".fcard");
+        if (card)
+          card.innerHTML =
+            '<div style="text-align:center;padding:52px 24px"><div style="font-size:2.8rem;margin-bottom:16px">✓</div><h3 style="font-size:1.3rem;font-weight:800;color:#1a1a1a;margin-bottom:12px">Orçamento solicitado!</h3><p style="color:#666;font-size:0.92rem">Nossa equipe entra em contato em até <strong>24h úteis</strong> com uma proposta personalizada.</p></div>';
+      },
+    });
+  }
+
+  function loadHS() {
+    if (document.getElementById("hs-forms-v2")) {
+      loadForm();
+      return;
+    }
+    var s = document.createElement("script");
+    s.id = "hs-forms-v2";
+    s.src = "https://js.hsforms.net/forms/embed/v2.js";
+    s.onload = loadForm;
+    document.head.appendChild(s);
+  }
+
+  function initFAQ() {
+    document.querySelectorAll(".lp-demo .faq-item").forEach(function (item) {
+      var q = item.querySelector(".faq-q");
+      if (!q) return;
+      q.addEventListener("click", function () {
+        var wasOpen = item.classList.contains("open");
+        document.querySelectorAll(".lp-demo .faq-item").forEach(function (i) {
+          i.classList.remove("open");
+          var btn = i.querySelector(".faq-q");
+          if (btn) btn.setAttribute("aria-expanded", "false");
+        });
+        if (!wasOpen) {
+          item.classList.add("open");
+          q.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  }
+
+  function initSlots() {
+    var el = document.getElementById("lp" + sid + "-slots");
+    if (el) el.textContent = Math.floor(Math.random() * 4 + 3) + " vagas";
+  }
+
+  function initScroll() {
+    document.querySelectorAll('.lp-demo a[href="#formulario"]').forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var t = document.getElementById("formulario");
+        if (t) t.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+  }
+
+  function initScrollAnimation() {
+    var elements = document.querySelectorAll(".scroll-animate");
+    if (!elements.length) return;
+    var observer = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    elements.forEach(function (el) { observer.observe(el); });
+  }
+
+  function init() {
+    loadHS();
+    initFAQ();
+    initSlots();
+    initScroll();
+    initScrollAnimation();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+  </script>
+</html>
